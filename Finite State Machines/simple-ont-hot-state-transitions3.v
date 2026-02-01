@@ -9,7 +9,7 @@
     // State transition logic: Derive an equation for each state flip-flop.
     assign next_state[A] = state[A]&(~in) | state[C]&(~in);
     assign next_state[B] = state[B]&(in) | state[A]&(in) | state[D]&(in);
-    assign next_state[C] = (state[B] & ~in) | (state[D] & ~in);
+    assign next_state[C] = (state[B]&~in) | (state[D]&~in);
     assign next_state[D] = state[C]&(in);
 
     // Output logic: 
